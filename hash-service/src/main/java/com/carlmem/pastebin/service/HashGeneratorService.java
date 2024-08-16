@@ -1,7 +1,9 @@
 package com.carlmem.pastebin.service;
 
+import java.util.List;
+
 public interface HashGeneratorService {
 
-    String generate();
+    List<String> generate(long amount);
 
 }

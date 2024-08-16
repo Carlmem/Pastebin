@@ -1,4 +1,4 @@
-rootProject.name = 'pastebin'
+rootProject.name = 'Pastebin'
 
 include 'hash-service'
 include 'communication-service'

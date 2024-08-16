@@ -1,5 +1,6 @@
 package com.carlmem.pastebin.service;
 
+import com.carlmem.pastebin.exception.GenerateException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,22 @@ public class HashServiceImpl implements HashService {
     @Override
     public String getOrLoad() {
         final var result = this.template.opsForSet().pop(HASH_KEY);
-        return result == null ? this.hashGeneratorService.generate() : result;
+        if (result != null) {
+            return result;
+        }
+
+        return this.hashGeneratorService.generate(1).stream().findFirst()
+                .orElseThrow(() -> new GenerateException("cannot generate hash"));
+    }
+
+    @Override
+    public void load(long amount) {
+        System.out.println(amount);
+        final var generateHashes = this.hashGeneratorService.generate(amount).toArray(String[]::new);
+        if (generateHashes.length == 0) {
+            return;
+        }
+
+        this.template.opsForSet().add(HASH_KEY, generateHashes);
     }
 }

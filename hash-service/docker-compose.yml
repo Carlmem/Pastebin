@@ -5,9 +5,9 @@ services:
     image: redis:latest
     container_name: redis_container
     environment:
+      REDIS_USERNAME: redis
       REDIS_PASSWORD: redis
-      REDIS_USER: redis
-      REDIS_USER_PASSWORD: redis
+      READONLY_PASSWORD: redis
     ports:
       - "6379:6379"
     restart: unless-stopped
