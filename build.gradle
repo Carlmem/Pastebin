@@ -1,0 +1,8 @@
+group = 'com.carlmem'
+
+ext {
+    jmhVersion = '1.37'
+    springDocVersion = '2.1.0'
+    redisClientVersion = '5.1.2'
+    redisSpringDataVersion = '3.2.0'
+}

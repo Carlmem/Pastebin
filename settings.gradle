@@ -1,0 +1,5 @@
+rootProject.name = 'pastebin'
+
+include 'hash-service'
+include 'communication-service'
+

@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: communication-service
+  datasource:
+    profile:
+      username: ${DATABASE_USER:postgres}
+      password: ${DATABASE_PASSWORD:postgres}
+      jdbc-url: ${DATABASE_HOST_JDBC:jdbc:postgresql://localhost:5432}/communication
+      driver-class-name: org.postgresql.Driver
+
+server:
+  port: ${SERVER_HTTP_PORT:8081}
