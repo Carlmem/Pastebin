@@ -28,7 +28,6 @@ public class HashServiceImpl implements HashService {
 
     @Override
     public void load(long amount) {
-        System.out.println(amount);
         final var generateHashes = this.hashGeneratorService.generate(amount).toArray(String[]::new);
         if (generateHashes.length == 0) {
             return;
