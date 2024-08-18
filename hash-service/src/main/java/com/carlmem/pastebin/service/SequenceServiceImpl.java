@@ -1,12 +1,10 @@
 package com.carlmem.pastebin.service;
 
-import com.carlmem.pastebin.exception.GenerateException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
