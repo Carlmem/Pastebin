@@ -4,7 +4,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
 
-public interface BlockCreateService {
+public interface ContentCreateService {
 
     String create(MultipartFile multipartFile, Date expiredDate);
 

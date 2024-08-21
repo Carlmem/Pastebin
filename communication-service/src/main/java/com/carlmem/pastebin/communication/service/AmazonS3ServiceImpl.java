@@ -1,13 +1,14 @@
 package com.carlmem.pastebin.communication.service;
 
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.model.DeleteObjectsRequest;
 import com.carlmem.pastebin.communication.exception.FileUploadException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.Date;
+import java.util.List;
 
 @Service
 public class AmazonS3ServiceImpl implements AmazonS3Service {
@@ -22,11 +23,25 @@ public class AmazonS3ServiceImpl implements AmazonS3Service {
     }
 
     @Override
-    public void upload(String hash, MultipartFile contentFile, Date date) {
+    public String upload(MultipartFile contentFile) {
         try {
-            this.amazonS3.putObject(this.bucketName, hash, contentFile.getInputStream(), null);
+            final var fileName = contentFile.getOriginalFilename();
+            this.amazonS3.putObject(this.bucketName, fileName, contentFile.getInputStream(), null);
+            return this.amazonS3.getUrl(this.bucketName, fileName).toString();
         } catch (IOException e) {
             throw new FileUploadException("cannot upload file.", e);
         }
+    }
+
+    @Override
+    public void deleteAll(List<String> fileNames) {
+        final var deleteRequest = new DeleteObjectsRequest(this.bucketName);
+        deleteRequest.setKeys(
+                fileNames.stream()
+                        .map(DeleteObjectsRequest.KeyVersion::new)
+                        .toList()
+        );
+
+        this.amazonS3.deleteObjects(deleteRequest);
     }
 }

@@ -9,12 +9,19 @@ import java.util.Date;
 
 @Service
 @RequiredArgsConstructor
-public class BlockCreateServiceImpl implements BlockCreateService {
+public class ContentCreateServiceImpl implements ContentCreateService {
+
+    private final AmazonS3Service amazonS3Service;
 
     private final HashServiceClient hashServiceClient;
 
+    private final ContentEntityService contentEntityService;
+
     @Override
     public String create(MultipartFile multipartFile, Date expiredDate) {
-        return null;
+        final var hash = this.hashServiceClient.generate();
+        final var fileUrl = this.amazonS3Service.upload(multipartFile);
+        this.contentEntityService.create(hash, fileUrl, multipartFile.getOriginalFilename(), expiredDate);
+        return hash;
     }
 }
