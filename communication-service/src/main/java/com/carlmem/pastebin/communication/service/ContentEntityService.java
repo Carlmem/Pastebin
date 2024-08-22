@@ -8,5 +8,5 @@ public interface ContentEntityService {
 
     ContentEntity getByHash(String hash);
 
-    ContentEntity create(String hash, String fileUrl, String fileName, Date expiredDate);
+    ContentEntity create(String hash, String fileUrl, Date expiredDate);
 }

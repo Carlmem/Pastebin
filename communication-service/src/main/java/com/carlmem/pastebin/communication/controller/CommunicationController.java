@@ -23,15 +23,15 @@ public class CommunicationController {
     @PostMapping("/create")
     public String create(
             @RequestParam("contentFile") MultipartFile contentFile,
-            @DateTimeFormat(pattern="yyyy-MM-dd HH") Date expiredTime
+            @RequestParam("expiredDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date
     ) {
-        return this.contentCreateService.create(contentFile, expiredTime);
+        return this.contentCreateService.create(contentFile, date);
     }
 
-    @GetMapping("/content{hash}")
+    @GetMapping("/content/{hash}")
     public ResponseEntity<ContentDto> getPageContent(@PathVariable("hash") String hash) {
         return ResponseEntity.ok()
-                .contentType(MediaType.ALL)
+                .contentType(MediaType.APPLICATION_JSON)
                 .body(this.contentService.get(hash));
     }
 }

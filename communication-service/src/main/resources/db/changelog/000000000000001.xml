@@ -10,7 +10,6 @@
             <column name="hash" type="varchar(10)">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="file_name" type="varchar(30)"/>
             <column name="views" type="bigint"/>
             <column name="file_url" type="varchar"/>
             <column name="expired_date" type="date"/>

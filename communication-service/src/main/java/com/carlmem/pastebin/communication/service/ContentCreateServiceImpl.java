@@ -20,8 +20,8 @@ public class ContentCreateServiceImpl implements ContentCreateService {
     @Override
     public String create(MultipartFile multipartFile, Date expiredDate) {
         final var hash = this.hashServiceClient.generate();
-        final var fileUrl = this.amazonS3Service.upload(multipartFile);
-        this.contentEntityService.create(hash, fileUrl, multipartFile.getOriginalFilename(), expiredDate);
+        final var fileUrl = this.amazonS3Service.upload(hash, multipartFile);
+        this.contentEntityService.create(hash, fileUrl, expiredDate);
         return hash;
     }
 }

@@ -5,6 +5,7 @@ services:
     container_name: postgres_communicate
     image: postgres
     environment:
+      PGPORT: 5434
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       PGDATA: /data/postgres

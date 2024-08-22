@@ -20,7 +20,7 @@ public class ContentDeleteServiceImpl implements ContentDeleteService {
         final var expiredContent = this.contentRepository.findExpiredContents();
         this.amazonS3Service.deleteAll(
                 expiredContent.stream()
-                        .map(ContentEntity::getFileName)
+                        .map(ContentEntity::getHash)
                         .toList()
         );
         this.contentRepository.deleteAll(expiredContent);

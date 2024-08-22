@@ -19,9 +19,6 @@ public class ContentEntity {
     @Column(name = "hash", length = 10)
     private String hash;
 
-    @Column(name = "file_name")
-    private String fileName;
-
     @Column(name = "views")
     private Long views;
 

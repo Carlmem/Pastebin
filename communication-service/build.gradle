@@ -21,8 +21,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:$springDocVersion"
     implementation "io.hypersistence:hypersistence-utils-hibernate-60:${hibernateStructuresVersion}"
-    //implementation "redis.clients:jedis:$redisClientVersion"
-    //implementation "org.springframework.data:spring-data-redis:$redisSpringDataVersion"
     implementation "com.amazonaws:aws-java-sdk-s3:$amazonS3Version"
 
     implementation 'org.liquibase:liquibase-core'

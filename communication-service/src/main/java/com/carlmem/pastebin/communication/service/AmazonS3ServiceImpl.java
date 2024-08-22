@@ -23,11 +23,10 @@ public class AmazonS3ServiceImpl implements AmazonS3Service {
     }
 
     @Override
-    public String upload(MultipartFile contentFile) {
+    public String upload(String hash, MultipartFile contentFile) {
         try {
-            final var fileName = contentFile.getOriginalFilename();
-            this.amazonS3.putObject(this.bucketName, fileName, contentFile.getInputStream(), null);
-            return this.amazonS3.getUrl(this.bucketName, fileName).toString();
+            this.amazonS3.putObject(this.bucketName, hash, contentFile.getInputStream(), null);
+            return this.amazonS3.getUrl(this.bucketName, hash).toString();
         } catch (IOException e) {
             throw new FileUploadException("cannot upload file.", e);
         }

@@ -22,11 +22,10 @@ public class ContentEntityServiceImpl implements ContentEntityService {
     }
 
     @Override
-    public ContentEntity create(String hash, String url, String fileName, Date expiredDate) {
+    public ContentEntity create(String hash, String url, Date expiredDate) {
         return this.contentRepository.save(
                 new ContentEntity()
                         .setHash(hash)
-                        .setFileName(fileName)
                         .setFileUrl(url)
                         .setExpiredDate(expiredDate)
                         .setViews(0L)

@@ -17,7 +17,7 @@ public class AmazonS3Configuration {
         final var basicAWSCredentials = new BasicAWSCredentials(awsAccessKey, awsSecretKey);
         return AmazonS3ClientBuilder.standard()
                 .withCredentials(new AWSStaticCredentialsProvider(basicAWSCredentials))
-                .withRegion(Regions.EU_CENTRAL_1)
+                .withRegion(Regions.EU_NORTH_1)
                 .build();
     }
 }
