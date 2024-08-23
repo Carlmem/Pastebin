@@ -34,4 +34,5 @@ public class CommunicationController {
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(this.contentService.get(hash));
     }
+
 }
