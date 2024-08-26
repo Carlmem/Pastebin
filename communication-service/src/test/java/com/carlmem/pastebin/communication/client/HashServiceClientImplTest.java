@@ -1,6 +1,5 @@
 package com.carlmem.pastebin.communication.client;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.tomakehurst.wiremock.junit5.WireMockRuntimeInfo;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,7 +23,7 @@ class HashServiceClientImplTest {
     }
 
     @Test
-    void generate() throws JsonProcessingException {
+    void generate() {
         stubFor(get(urlEqualTo("/generate")));
 
         var hash = this.hashServiceClient.generate();
