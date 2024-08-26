@@ -42,8 +42,12 @@ To install and run this project locally, follow these steps:
    ```bash
    docker-compose up
 6. There are 3 endpoints in total we will start from the hash-service.
-![generate endpoint will return a hash, which will use a communication service to create a URL for a new post](https://imgur.com/3bytRIq)
-![Next is creating content that will return a hash for the new URL,
-   which you can use in the next step. At first, you need to add a pre-script for the date.](https://imgur.com/7kppaQl)
-![Then you can send request for creating URL](https://imgur.com/zI9Xi7s)
-![There's only one endpoint left, which will return your data by hash](https://imgur.com/GvWc8B2)
+![](example/example1.PNG)
+generate endpoint will return a hash, which will use a communication service to create a URL for a new post
+![](example/example2.PNG)
+Next is creating content that will return a hash for the new URL,
+   which you can use in the next step. At first, you need to add a pre-script for the date.
+![](example/example3.PNG)
+Then you can send request for creating URL
+![](example/example4.PNG)
+There's only one endpoint left, which will return your data by hash
