@@ -9,8 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      SUBPROJECT_NAME: hash-service
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
