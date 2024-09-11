@@ -24,7 +24,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./Pastebin/Dockerfile
           push: true
           tags: image:latest
           outputs: type=docker,dest=/tmp/image.tar
