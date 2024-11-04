@@ -1,4 +1,4 @@
-package com.carlmem.pastebin.communication.service;
+package com.carlmem.pastebin.communication.service.content;
 
 import com.carlmem.pastebin.communication.dto.ContentDto;
 import lombok.RequiredArgsConstructor;

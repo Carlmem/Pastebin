@@ -1,8 +1,9 @@
 package com.carlmem.pastebin.communication.controller;
 
+import com.carlmem.pastebin.communication.controller.rest.ContentController;
 import com.carlmem.pastebin.communication.dto.ContentDto;
-import com.carlmem.pastebin.communication.service.ContentCreateService;
-import com.carlmem.pastebin.communication.service.ContentService;
+import com.carlmem.pastebin.communication.service.content.ContentCreateService;
+import com.carlmem.pastebin.communication.service.content.ContentService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(CommunicationController.class)
-public class CommunicationControllerTest {
+@WebMvcTest(ContentController.class)
+public class ContentControllerTest {
 
     @Autowired
     private MockMvc mockMvc;

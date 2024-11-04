@@ -1,6 +1,6 @@
 package com.carlmem.pastebin.communication.client;
 
-public interface HashServiceClient {
+public interface HashClient {
 
     String generate();
 }

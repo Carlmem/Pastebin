@@ -1,4 +1,4 @@
-package com.carlmem.pastebin.communication.controller;
+package com.carlmem.pastebin.communication.controller.advice;
 
 import com.carlmem.pastebin.communication.dto.ErrorDto;
 import com.carlmem.pastebin.communication.exception.EntityNotFoundException;

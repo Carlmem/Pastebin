@@ -1,4 +1,4 @@
-package com.carlmem.pastebin.communication.service;
+package com.carlmem.pastebin.communication.service.content;
 
 public interface ContentDeleteService {
 

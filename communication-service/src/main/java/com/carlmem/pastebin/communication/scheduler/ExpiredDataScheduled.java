@@ -1,6 +1,6 @@
 package com.carlmem.pastebin.communication.scheduler;
 
-import com.carlmem.pastebin.communication.service.ContentDeleteService;
+import com.carlmem.pastebin.communication.service.content.ContentDeleteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;

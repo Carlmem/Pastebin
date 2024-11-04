@@ -1,4 +1,4 @@
-package com.carlmem.pastebin.communication.service;
+package com.carlmem.pastebin.communication.service.s3;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.DeleteObjectsRequest;
@@ -28,7 +28,7 @@ public class AmazonS3ServiceImpl implements AmazonS3Service {
             this.amazonS3.putObject(this.bucketName, hash, contentFile.getInputStream(), null);
             return this.amazonS3.getUrl(this.bucketName, hash).toString();
         } catch (IOException e) {
-            throw new FileUploadException("cannot upload file.", e);
+            throw new FileUploadException("Cannot upload file.", e);
         }
     }
 

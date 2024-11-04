@@ -15,7 +15,7 @@ import java.net.URL;
 @Setter
 @Configuration
 @ConfigurationProperties(prefix = "service.hash-service")
-public class HashServiceProperties {
+public class HashClientProperties {
 
     private URL url;
 
@@ -23,7 +23,7 @@ public class HashServiceProperties {
     static class HashServiceWebClientConfiguration {
 
         @Bean
-        public WebClient hashServiceServiceWebClient(HashServiceProperties properties) {
+        public WebClient hashClientWebClient(HashClientProperties properties) {
             return WebClient.builder()
                     .baseUrl(properties.getUrl().toString())
                     .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)

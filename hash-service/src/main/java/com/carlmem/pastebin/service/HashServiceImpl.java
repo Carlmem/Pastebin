@@ -23,7 +23,7 @@ public class HashServiceImpl implements HashService {
         }
 
         return this.hashGeneratorService.generate(1).stream().findFirst()
-                .orElseThrow(() -> new GenerateException("cannot generate hash"));
+                .orElseThrow(() -> new GenerateException("Cannot generate hash"));
     }
 
     @Override

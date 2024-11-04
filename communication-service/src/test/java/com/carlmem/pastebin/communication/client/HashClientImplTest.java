@@ -9,13 +9,13 @@ import org.springframework.web.reactive.function.client.WebClient;
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 
 @WireMockTest
-class HashServiceClientImplTest {
+class HashClientImplTest {
 
-    private HashServiceClient hashServiceClient;
+    private HashClient hashClient;
 
     @BeforeEach
     void before(WireMockRuntimeInfo runtimeInfo) {
-        this.hashServiceClient = new HashServiceClientImpl(
+        this.hashClient = new HashClientImpl(
                 WebClient.builder()
                         .baseUrl("http://localhost:" + runtimeInfo.getHttpPort())
                         .build()
@@ -26,7 +26,7 @@ class HashServiceClientImplTest {
     void generate() {
         stubFor(get(urlEqualTo("/generate")));
 
-        var hash = this.hashServiceClient.generate();
+        var hash = this.hashClient.generate();
         verify(getRequestedFor(urlEqualTo("/generate")));
     }
 
