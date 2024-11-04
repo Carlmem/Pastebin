@@ -1,5 +1,6 @@
-package com.carlmem.pastebin.service;
+package com.carlmem.pastebin.service.hash;
 
+import com.carlmem.pastebin.service.seq.SequenceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

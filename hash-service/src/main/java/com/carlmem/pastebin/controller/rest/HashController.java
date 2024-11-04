@@ -1,7 +1,7 @@
 package com.carlmem.pastebin.controller.rest;
 
 import com.carlmem.pastebin.dto.ErrorDto;
-import com.carlmem.pastebin.service.HashService;
+import com.carlmem.pastebin.service.hash.HashService;
 import com.carlmem.pastebin.util.WebConstants;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;

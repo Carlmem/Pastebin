@@ -1,5 +1,6 @@
 package com.carlmem.pastebin.communication.client;
 
+import com.carlmem.pastebin.communication.util.WebConstants;
 import com.github.tomakehurst.wiremock.junit5.WireMockRuntimeInfo;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,10 +25,10 @@ class HashClientImplTest {
 
     @Test
     void generate() {
-        stubFor(get(urlEqualTo("/generate")));
+        stubFor(get(urlEqualTo(WebConstants.API + "hashes")));
 
         var hash = this.hashClient.generate();
-        verify(getRequestedFor(urlEqualTo("/generate")));
+        verify(getRequestedFor(urlEqualTo(WebConstants.API + "hashes")));
     }
 
 }

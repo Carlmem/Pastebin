@@ -1,4 +1,4 @@
-package com.carlmem.pastebin.service;
+package com.carlmem.pastebin.service.seq;
 
 import java.util.List;
 

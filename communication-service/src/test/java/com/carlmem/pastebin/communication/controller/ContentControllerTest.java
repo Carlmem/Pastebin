@@ -4,6 +4,7 @@ import com.carlmem.pastebin.communication.controller.rest.ContentController;
 import com.carlmem.pastebin.communication.dto.ContentDto;
 import com.carlmem.pastebin.communication.service.content.ContentCreateService;
 import com.carlmem.pastebin.communication.service.content.ContentService;
+import com.carlmem.pastebin.communication.util.WebConstants;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,9 +38,9 @@ public class ContentControllerTest {
         MockMultipartFile file = new MockMultipartFile(
                 "contentFile", "file.txt", "text/plain", "content".getBytes()
         );
-        Mockito.when(contentCreateService.create(any(), any())).thenReturn("HASH");
+        Mockito.when(this.contentCreateService.create(any(), any())).thenReturn("HASH");
 
-        this.mockMvc.perform(multipart("/create")
+        this.mockMvc.perform(multipart(WebConstants.FULL_WEB + "/contents")
                         .file(file)
                         .param("expiredDate", "2024-12-31"))
                 .andExpect(status().isOk())
@@ -47,11 +48,11 @@ public class ContentControllerTest {
     }
 
     @Test
-    public void testGetPageContent() throws Exception {
+    public void testGetContent() throws Exception {
         final var contentDto = new ContentDto(100, "fileUrl");
-        final var path = "/content/hash";
+        final var path = WebConstants.FULL_WEB + "/contents/hash";
 
-        Mockito.when(contentService.get(anyString())).thenReturn(contentDto);
+        Mockito.when(this.contentService.get(anyString())).thenReturn(contentDto);
         this.mockMvc.perform(get(path)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())

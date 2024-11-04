@@ -1,7 +1,7 @@
 package com.carlmem.pastebin.scheduler;
 
-import com.carlmem.pastebin.service.HashService;
-import com.carlmem.pastebin.service.HashServiceImpl;
+import com.carlmem.pastebin.service.hash.HashService;
+import com.carlmem.pastebin.service.hash.HashServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.scheduling.annotation.Async;

@@ -1,4 +1,4 @@
-package com.carlmem.pastebin.service;
+package com.carlmem.pastebin.service.hash;
 
 import com.carlmem.pastebin.exception.GenerateException;
 import lombok.RequiredArgsConstructor;
