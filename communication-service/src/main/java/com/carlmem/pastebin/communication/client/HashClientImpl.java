@@ -6,15 +6,15 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @Component
 @RequiredArgsConstructor
-public class HashServiceClientImpl implements HashServiceClient {
+public class HashClientImpl implements HashClient {
 
     private static final String GENERATE_PATH = "/generate";
 
-    private final WebClient hashServiceServiceWebClient;
+    private final WebClient hashClientWebClient;
 
     @Override
     public String generate() {
-        return this.hashServiceServiceWebClient.get()
+        return this.hashClientWebClient.get()
                 .uri(uriBuilder -> uriBuilder.path(GENERATE_PATH)
                         .build())
                 .retrieve()

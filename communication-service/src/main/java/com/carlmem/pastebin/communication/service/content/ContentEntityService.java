@@ -1,6 +1,6 @@
-package com.carlmem.pastebin.communication.service;
+package com.carlmem.pastebin.communication.service.content;
 
-import com.carlmem.pastebin.communication.model.ContentEntity;
+import com.carlmem.pastebin.communication.domain.ContentEntity;
 
 import java.util.Date;
 

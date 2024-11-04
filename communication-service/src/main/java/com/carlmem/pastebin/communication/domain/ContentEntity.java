@@ -1,4 +1,4 @@
-package com.carlmem.pastebin.communication.model;
+package com.carlmem.pastebin.communication.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;

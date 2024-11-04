@@ -1,4 +1,4 @@
-package com.carlmem.pastebin.communication.service;
+package com.carlmem.pastebin.communication.service.s3;
 
 import org.springframework.web.multipart.MultipartFile;
 
